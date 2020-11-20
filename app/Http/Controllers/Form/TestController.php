@@ -37,5 +37,15 @@ class TestController extends Controller
         //dd($request);
     }
 
+    public function formEditUser(User $user){
+        return view('editUser', [               //ivokei os dados do meu banco para que possa
+            'user' => $user                     //mostra-los na minha visão, agora só invoca-los 
+        ]);                                     //através do value=""
+    }
+
+    public function edit(User $user, Request $request){
+        var_dump($user, $request);
+    }
+
     
 }

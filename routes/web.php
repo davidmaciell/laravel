@@ -25,6 +25,7 @@ Route::get('usuarios/novo','Form\\TestController@formularioAddUser')->name('form
 
 Route::post('usuarios/store', 'Form\\TestController@storeUser')->name('users.store'); 
 
-Route::put('{user}');
+Route::put('usuarios/edit/{user}', 'Form\\TestController@edit')->name('users.edit');
+Route::get('usuarios/editar/{user}','Form\\TestController@formEditUser')->name('form.addUser');
 
 
