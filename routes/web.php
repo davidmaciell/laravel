@@ -11,7 +11,9 @@
 |
 */
 
-//Route::get('/', 'usuarioControl@listUser');
+Route::get('/', function(){
+    return view('welcome');
+});
                                                         //não entendi esse name  ??nome da rota??
 Route::get('usuarios','Form\\TestController@listAllUsers')->name('users.listAll'); //lista de todos usuarios
 
@@ -23,7 +25,7 @@ Route::get('usuarios/novo','Form\\TestController@formularioAddUser')->name('form
 //Route::get('usuarios/{user}','Form\\TestController@listUser')->name('list');  //passo o o id do usuario e ele busca apenas aquele que chamei
 
 
-Route::post('usuarios/store', 'Form\\TestController@storeUser')->name('users.store'); 
+Route::post('usuarios/store', 'Form\\TestController@storeUser')->name('users.store'); //essa rota só salva os usuarios
 
 Route::put('{user}');
 
