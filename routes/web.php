@@ -29,3 +29,5 @@ Route::put('usuarios/edit/{user}', 'Form\\TestController@edit')->name('users.edi
 Route::get('usuarios/editar/{user}','Form\\TestController@formEditUser')->name('form.addUser');
 
 
+
+
