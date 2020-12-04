@@ -24,10 +24,10 @@ Route::get('usuarios/novo','Form\\TestController@formularioAddUser')->name('form
 
 
 Route::post('usuarios/store', 'Form\\TestController@storeUser')->name('users.store'); 
-
+        //esse como edit para evitar que o usuario chame essa rota pelo uri pois isso iria gerar um erro
 Route::put('usuarios/edit/{user}', 'Form\\TestController@edit')->name('users.edit');
 Route::get('usuarios/editar/{user}','Form\\TestController@formEditUser')->name('form.addUser');
-
+//esse é get pois ele me traz o formulario. já o edit é put pois ele leva as informaçoes e atualiza no banco
 
 
 
