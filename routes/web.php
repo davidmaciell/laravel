@@ -29,5 +29,5 @@ Route::put('usuarios/edit/{user}', 'Form\\TestController@edit')->name('users.edi
 Route::get('usuarios/editar/{user}','Form\\TestController@formEditUser')->name('form.addUser');
 //esse é get pois ele me traz o formulario. já o edit é put pois ele leva as informaçoes e atualiza no banco
 
-
+Route::delete('usuarios/destroy/{user}', 'Form\\TestController@destroy') ->name('user.destroy');
 

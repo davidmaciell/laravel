@@ -31,11 +31,11 @@ class TestController extends Controller
     public function storeUser(Request $request){
         $user = new User();
         $user->name = $request->name;
-        if(filter_var($request->email, FILTER_VALIDATE_EMAIL)){
-            $user->email = $request->email;
-        }else{
-            echo("$request->email não é valido");
-        }
+        //if(filter_var($request->email, FILTER_VALIDATE_EMAIL)){
+            $user->email = $request->email; //filter var não está funcionando
+        //}else{
+        //    echo("$request->email não é valido");
+        //}
         $user->password = hash::make($request->password);
         $user->save(); //preciso desse save para persistir as informaçoes no banco
         return redirect()->route('users.listAll');  //retorna na pagina de home
@@ -62,5 +62,9 @@ class TestController extends Controller
         return redirect()->route('users.listAll');     //redireciona para a tela de usuarios
     }
 
-    
+    public function destroy(User $user){
+        $user->delete();
+        return redirect()->route('users.listAll');
+        echo "<script> alert('nças'); </script>";
+    }
 }
