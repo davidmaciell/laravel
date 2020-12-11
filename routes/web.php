@@ -25,8 +25,15 @@ Route::get('usuarios/novo','Form\\TestController@formularioAddUser')->name('form
 //Route::get('usuarios/{user}','Form\\TestController@listUser')->name('list');  //passo o o id do usuario e ele busca apenas aquele que chamei
 
 
+<<<<<<< HEAD
 Route::post('usuarios/store', 'Form\\TestController@storeUser')->name('users.store'); //essa rota só salva os usuarios
+=======
+Route::post('usuarios/store', 'Form\\TestController@storeUser')->name('users.store'); 
+        //esse como edit para evitar que o usuario chame essa rota pelo uri pois isso iria gerar um erro
+Route::put('usuarios/edit/{user}', 'Form\\TestController@edit')->name('users.edit');
+Route::get('usuarios/editar/{user}','Form\\TestController@formEditUser')->name('form.addUser');
+//esse é get pois ele me traz o formulario. já o edit é put pois ele leva as informaçoes e atualiza no banco
+>>>>>>> paralela
 
-Route::put('{user}');
-
+Route::delete('usuarios/destroy/{user}', 'Form\\TestController@destroy') ->name('user.destroy');
 
